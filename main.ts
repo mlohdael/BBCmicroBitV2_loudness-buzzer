@@ -1,10 +1,11 @@
 input.onSound(DetectedSound.Loud, function () {
     music.play(music.tonePlayable(262, music.beat(BeatFraction.Breve)), music.PlaybackMode.UntilDone)
 })
-input.setSoundThreshold(SoundThreshold.Loud, 80)
+let Threshold = 80
+input.setSoundThreshold(SoundThreshold.Loud, Threshold)
 basic.forever(function () {
     led.plotBarGraph(
     input.soundLevel(),
-    80
+    Threshold
     )
 })
